@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"flag"
 )
 
 func shellSort(array []int) {
@@ -33,13 +34,18 @@ func printArray(array []int) {
 }
 
 func main() {
-	const N = 20
+	var numberOfArgs = flag.Int("n", 20, "number of elements")
+	flag.Parse()
+
 	var array []int
-	for i := 0; i < N; i++ {
-		array = append(array, rand.Intn(100))
+	for i := 0; i < *numberOfArgs; i++ {
+		array = append(array, rand.Intn((*numberOfArgs)*10))
 	}
 
+	fmt.Print("Unsorted: ")
 	printArray(array)
+
 	shellSort(array)
+	fmt.Print("Sorted: ");
 	printArray(array)
 }
