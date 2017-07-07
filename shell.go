@@ -1,9 +1,9 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"math/rand"
-	"flag"
 )
 
 func shellSort(array []int) {
@@ -46,6 +46,6 @@ func main() {
 	printArray(array)
 
 	shellSort(array)
-	fmt.Print("Sorted: ");
+	fmt.Print("Sorted: ")
 	printArray(array)
 }
