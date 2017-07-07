@@ -36,7 +36,7 @@ func main() {
 	const N = 20
 	var array []int
 	for i := 0; i < N; i++ {
-		array = append(array, int(rand.Int31n(100)))
+		array = append(array, rand.Intn(100))
 	}
 
 	printArray(array)
