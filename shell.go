@@ -29,7 +29,7 @@ func printArray(array []int) {
 	for _, v := range array {
 		fmt.Printf("%d ", v)
 	}
-	println()
+	fmt.Println()
 }
 
 func main() {
