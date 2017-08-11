@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"math/rand"
+	"time"
 )
 
 func shellSort(array []int) {
@@ -37,6 +38,7 @@ func main() {
 	var numberOfArgs = flag.Int("n", 20, "number of elements")
 	flag.Parse()
 
+	startedAt := time.Now()
 	var array []int
 	for i := 0; i < *numberOfArgs; i++ {
 		array = append(array, rand.Intn((*numberOfArgs)*10))
@@ -48,4 +50,6 @@ func main() {
 	shellSort(array)
 	fmt.Print("Sorted: ")
 	printArray(array)
+
+	fmt.Println(time.Since(startedAt) / time.Millisecond)
 }
